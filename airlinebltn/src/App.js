@@ -30,7 +30,7 @@ const port = process.env.PORT || 8082;
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
 // #Task route solution
-const User = require('../models/User');
+const User = require('../models/flights');
 exports.addUser = (req, res) => {
     
     const user = new User(req.body)
