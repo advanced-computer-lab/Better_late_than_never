@@ -1,0 +1,5 @@
+
+{
+    "mongoURI":
+      "'mongodb+srv://dbZiad:dbZiad1234@airline-bltn.zm6lx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'"
+  }
