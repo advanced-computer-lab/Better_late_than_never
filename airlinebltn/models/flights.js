@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const flightschema = new mongoose.Schema({
+const flightschema = new Schema({
   flightNumber: {
     type: Number,
     required: true
@@ -28,4 +29,3 @@ const flightschema = new mongoose.Schema({
   }
 });
 
-module.exports = Book = mongoose.model('book', BookSchema);

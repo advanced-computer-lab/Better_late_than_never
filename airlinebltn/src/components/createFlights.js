@@ -80,7 +80,7 @@ class CreateFlights extends Component {
                       placeholder='Flight number'
                       name='Flight number'
                       className='form-control'
-                      value={this.state.Name}
+                      value={this.state.flightNumber}
                       onChange={this.onChange}
                     />
                   </div>
@@ -92,7 +92,7 @@ class CreateFlights extends Component {
                       placeholder='Departure time'
                       name='Departure time'
                       className='form-control'
-                      value={this.state.Email}
+                      value={this.state.departuretime}
                       onChange={this.onChange}
                     />
                   </div>
@@ -103,7 +103,7 @@ class CreateFlights extends Component {
                       placeholder='Arrival time'
                       name='Arrival time'
                       className='form-control'
-                      value={this.state.Age}
+                      value={this.state.arrivaltime}
                       onChange={this.onChange}
                     />
                   </div>
@@ -114,7 +114,7 @@ class CreateFlights extends Component {
                       placeholder='Date'
                       name='Date'
                       className='form-control'
-                      value={this.state.BornIn}
+                      value={this.state.dates}
                       onChange={this.onChange}
                     />
                   </div>
@@ -125,7 +125,7 @@ class CreateFlights extends Component {
                       placeholder='Number of Economy seats'
                       name='Number of Economy seats'
                       className='form-control'
-                      value={this.state.LivesIn}
+                      value={this.state.numberOfEconomy}
                       onChange={this.onChange}
                     />
                   </div>
@@ -135,7 +135,7 @@ class CreateFlights extends Component {
                       placeholder='Number of business seats'
                       name='Number of business seats'
                       className='form-control'
-                      value={this.state.MaritalStatus}
+                      value={this.state.nofBusclass}
                       onChange={this.onChange}
                     />
                   </div>
@@ -145,7 +145,7 @@ class CreateFlights extends Component {
                       placeholder='Airport'
                       name='Airport'
                       className='form-control'
-                      value={this.state.PhoneNumber}
+                      value={this.state.airports}
                       onChange={this.onChange}
                     />
                     
