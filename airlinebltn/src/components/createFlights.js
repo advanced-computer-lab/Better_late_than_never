@@ -37,7 +37,7 @@ class CreateFlights extends Component {
       };
   
       axios
-        .post('http://localhost:8000/create-user', data)
+        .post('http://localhost:8000/createFlights', data)
         .then(res => {
           this.setState({
             flightNumber: '',

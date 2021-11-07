@@ -15,8 +15,8 @@ class App extends components {
       <Router>
         <div>
           <Route exact path='/' component={showFlight} />
-          <Route path='/create-flights' component={CreateFlights} />
-          <Route path='/create-user' component={CreateUser} />
+          <Route path='/createFlights' component={CreateFlights} />
+          <Route path='/createUser' component={CreateUser} />
         </div>
       </Router>
     );

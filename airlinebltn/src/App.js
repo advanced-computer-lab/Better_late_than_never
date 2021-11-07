@@ -3,11 +3,10 @@
 const express = require('express');
 const connectDB = require('./config/db');
 //CHANGEEEEEEEEEEEEEEEEE ba3deen
-const MongoURI =  'mongodb+srv://dbZiad:dbZiad1234@airline-bltn.zm6lx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const MongoURI =  'mongodb+srv://dbZiad:dbZiad1234@airline-bltn.zm6lx.mongodb.net/Airline-BLTN?retryWrites=true&w=majority'
 var cors = require('cors');
 
-// routes
-const books = require('./routes/api/books');
+
 
 const app = express();
 
@@ -22,8 +21,7 @@ app.use(express.json({ extended: false }));
 
 app.get('/', (req, res) => res.send('Hello world!'));
 
-// use Routes
-app.use('/api/books', books);
+
 
 const port = process.env.PORT || 8082;
 
