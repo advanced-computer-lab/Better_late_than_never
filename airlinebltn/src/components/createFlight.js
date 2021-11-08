@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css';
 import axios from 'axios';
 
 
-class CreateFlights extends Component {
+class createFlight extends React.Component {
     constructor() {
       super();
       this.state = {
         flightNumber: '',
-        departuretime:'',
-        arrivaltime:'',
-        dates:'',
-        numberOfEconomy:'',
-        nofBusclass:'',
-        airports:''
+        departureTime:'',
+        arrivalTime:'',
+        date:'',
+        noOfEconomyClass:'',
+        noOfBusinessClass:'',
+        airport:''
         
       };
     }
@@ -27,32 +28,32 @@ class CreateFlights extends Component {
   
       const data = {
         flightNumber: this.state.flightNumber,
-        departuretime: this.state.departuretime,
-        arrivaltime: this.state.arrivaltime,
-        dates: this.state.dates,
-        numberOfEconomy: this.state.numberOfEconomy,
-        nofBusclass: this.state.nofBusclass,
-        airports: this.state.airports
+        departureTime: this.state.departureTime,
+        arrivalTime: this.state.arrivalTime,
+        date: this.state.date,
+        noOfEconomyClass: this.state.noOfEconomyClass,
+        noOfBusinessClass: this.state.noOfBusinessClass,
+        airport: this.state.airport
         
       };
   
       axios
-        .post('http://localhost:8000/createFlights', data)
+        .post('http://localhost:8082/create-flight', data)
         .then(res => {
           this.setState({
             flightNumber: '',
-            departuretime:'',
-            arrivaltime:'',
-            dates:'',
-            numberOfEconomy:'',
-            nofBusclass:'',
-            airports:''
+            departureTime:'',
+            arrivalTime:'',
+            date:'',
+            noOfEconomyClass:'',
+            noOfBusinessClass:'',
+            airport:''
             
           })
           this.props.history.push('/');
         })
         .catch(err => {
-          console.log("Error in CreateUser!");
+          console.log("Error in CreateFlight!");
         })
     };
   
@@ -64,13 +65,13 @@ class CreateFlights extends Component {
               <div className="col-md-8 m-auto">
                 <br />
                 <Link to="/" className="btn btn-outline-warning float-left">
-                    Show Users
+                    Show Flights
                 </Link>
               </div>
               <div className="col-md-8 m-auto">
-                <h1 className="display-4 text-center">Add User</h1>
+                <h1 className="display-4 text-center">Add Flight</h1>
                 <p className="lead text-center">
-                    Create new user
+                    Create new flight
                 </p>
   
                 <form noValidate onSubmit={this.onSubmit}>
@@ -92,7 +93,7 @@ class CreateFlights extends Component {
                       placeholder='Departure time'
                       name='Departure time'
                       className='form-control'
-                      value={this.state.departuretime}
+                      value={this.state.departureTime}
                       onChange={this.onChange}
                     />
                   </div>
@@ -103,7 +104,7 @@ class CreateFlights extends Component {
                       placeholder='Arrival time'
                       name='Arrival time'
                       className='form-control'
-                      value={this.state.arrivaltime}
+                      value={this.state.arrivalTime}
                       onChange={this.onChange}
                     />
                   </div>
@@ -114,7 +115,7 @@ class CreateFlights extends Component {
                       placeholder='Date'
                       name='Date'
                       className='form-control'
-                      value={this.state.dates}
+                      value={this.state.date}
                       onChange={this.onChange}
                     />
                   </div>
@@ -125,7 +126,7 @@ class CreateFlights extends Component {
                       placeholder='Number of Economy seats'
                       name='Number of Economy seats'
                       className='form-control'
-                      value={this.state.numberOfEconomy}
+                      value={this.state.noOfEconomyClass}
                       onChange={this.onChange}
                     />
                   </div>
@@ -135,7 +136,7 @@ class CreateFlights extends Component {
                       placeholder='Number of business seats'
                       name='Number of business seats'
                       className='form-control'
-                      value={this.state.nofBusclass}
+                      value={this.state.noOfBusinessClass}
                       onChange={this.onChange}
                     />
                   </div>
@@ -145,7 +146,7 @@ class CreateFlights extends Component {
                       placeholder='Airport'
                       name='Airport'
                       className='form-control'
-                      value={this.state.airports}
+                      value={this.state.airport}
                       onChange={this.onChange}
                     />
                     
@@ -165,4 +166,4 @@ class CreateFlights extends Component {
     }
   }
   
-  export default CreateFlights;
+  export default createFlight;
