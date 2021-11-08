@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 
-class CreateUser extends Component {
+class CreateUser extends React.Component {
     constructor() {
       super();
       this.state = {
@@ -29,7 +29,7 @@ class CreateUser extends Component {
       };
   
       axios
-        .post('http://localhost:8000/createUser', data)
+        .post('http://localhost:8082/createUser', data)
         .then(res => {
           this.setState({
             name: '',

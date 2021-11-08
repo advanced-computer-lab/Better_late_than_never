@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import flights from './models/flights';
 
-class showFlight extends Component{
+class showFlights extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      flights: []
+      flight: []
     };
   }
 
   componentDidMount() {
     axios
-      .get('http://localhost:8082/show-flights')
+      .get('http://localhost:8082/api/flight')
       .then(res => {
         this.setState({
-          flights: res.data
+          flight: res.data
         })
       })
       .catch(err =>{
@@ -27,20 +26,19 @@ class showFlight extends Component{
 
 
   render() {
-    const flights = this.state.flights;
-    console.log("PrintFlights: " + flights);
+    const flight = this.state.flight;
+    console.log("PrintFlight: " + flight);
     let flightList;
 
-    if(!flights) {
-      flightList = "there are no flights!";
+    if(!flight) {
+      flightList = "there is no flight record!";
     } else {
-      flightList = flights.map((flights, k) 
-    
+      flightList = flight.map((flight)
       );
     }
 
     return (
-      <div className="ShowFlights">
+      <div className="showFlightList">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -49,8 +47,8 @@ class showFlight extends Component{
             </div>
 
             <div className="col-md-11">
-              <Link to="/create-flights" className="btn btn-outline-warning float-right">
-                + Add New flights
+              <Link to="/create-flight" className="btn btn-outline-warning float-right">
+                + Add New Flight
               </Link>
               <br />
               <br />
@@ -68,4 +66,4 @@ class showFlight extends Component{
   }
 }
 
-export default showFlight;
+export default showFlights;
