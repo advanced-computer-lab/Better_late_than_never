@@ -30,10 +30,14 @@ app.use(cors({ origin: true, credentials: true }));
 // Init Middleware
 app.use(express.json({ extended: false }));
 
+
 app.get('/', (req, res) => res.send('Hello world!'));
+
+
 
 // use Routes
 app.use('/api/flight', flight);
+//app.use('/components/createUser');
 
 const port = process.env.PORT || 8082;
 

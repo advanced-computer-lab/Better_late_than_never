@@ -29,7 +29,7 @@ class CreateUser extends React.Component {
       };
   
       axios
-        .post('http://localhost:8082/createUser', data)
+        .get('http://localhost:8082/createUser', data)
         .then(res => {
           this.setState({
             name: '',
