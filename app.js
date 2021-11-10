@@ -8,7 +8,7 @@ const flight = require('./Routes/api/flight');
 const app = express();
 
 // Connect Database
-const db = "mongodb+srv://dbZiad:<dbZiad>@airline-bltn.zm6lx.mongodb.net/Flight?retryWrites=true&w=majority"
+const db = "mongodb+srv://dbZiad:ah@cluster0.c86mb.mongodb.net/airline?retryWrites=true&w=majority"
 
 try {
      mongoose.connect(
@@ -16,7 +16,7 @@ try {
       {
         useNewUrlParser: true
       }
-    ).then( console.log('MongoDB is Connected...'))
+    ).then( console.log('MongoDB is Connected...'+" "+db))
    
   } catch (err) {
       console.log("hello");
@@ -30,9 +30,9 @@ app.use(cors({ origin: true, credentials: true }));
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-
+app.use('/flight', flight);
 app.get('/', (req, res) => res.send('Hello world!'));
-
+app.post('/create-flight',(req,res)=> res.send('a7a'))
 
 
 // use Routes

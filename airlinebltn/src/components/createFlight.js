@@ -18,7 +18,10 @@ class createFlight extends React.Component {
         
       };
     }
-  
+  componentDidMount(){
+   console.log('working')
+
+  }
     onChange = e => {
       this.setState({ [e.target.name]: e.target.value });
     };
@@ -40,17 +43,8 @@ class createFlight extends React.Component {
       axios
         .post('http://localhost:8082/create-flight', data)
         .then(res => {
-          this.setState({
-            flightNumber: '',
-            departureTime:'',
-            arrivalTime:'',
-            date:'',
-            noOfEconomyClass:'',
-            noOfBusinessClass:'',
-            airport:''
-            
-          })
-          this.props.history.push('/');
+          
+        
         })
         .catch(err => {
           console.log("Error in CreateFlight!");
