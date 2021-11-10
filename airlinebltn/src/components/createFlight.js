@@ -38,7 +38,7 @@ class createFlight extends React.Component {
       };
   
       axios
-        .Server.Transfer('http://localhost:8082/create-flight', data)
+        .post('http://localhost:8082/create-flight', data)
         .then(res => {
           this.setState({
             flightNumber: '',

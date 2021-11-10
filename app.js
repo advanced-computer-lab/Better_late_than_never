@@ -8,7 +8,7 @@ const flight = require('./Routes/api/flight');
 const app = express();
 
 // Connect Database
-const db = "mongodb+srv://omar:11oah2015@betterlatethannever.p9s0v.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const db = "mongodb+srv://dbZiad:<dbZiad>@airline-bltn.zm6lx.mongodb.net/Flight?retryWrites=true&w=majority"
 
 try {
      mongoose.connect(
