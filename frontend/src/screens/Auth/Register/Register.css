@@ -1,0 +1,7 @@
+.btn_primary{
+    background:#2699FB !important;
+    color:white
+}
+.input[type=text] {
+    border: 3px solid #555 !important;
+}
